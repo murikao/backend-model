@@ -12,7 +12,13 @@ routes.get('/', (req, res) =>
 import { Router } from 'express';
 import User from './app/models/User';
 
+import UserController from './app/controllers/UserController';
+
 const routes = new Router();
+
+routes.post('/users', UserController.store);
+
+// get ("/") so p teste
 routes.get('/', async (req, res) => {
   // esta rotina eh tratada no controller
   // aqui s'o para testar se gerou tudo bem
